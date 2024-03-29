@@ -6,6 +6,15 @@ import { HomePage } from './pages/HomePage';
 import Footer from './components/Footer';
 
 const App = () => {
+  // const [products,setProducts]=useState(null);
+  // useEffect(()=>{
+  //   const getProducts=async()=>{
+  //     const ref = collection(db,"products")
+  //     const data =await getDocs(ref);
+  //     console.log(data.docs.map(doc=>({...doc.data(),id:doc.id})));
+  //   }
+  //   getProducts()
+  // },[])
   // const [isDarkMode, setIsDarkMode] = useState(false);
 
   // useEffect(() => {
@@ -31,15 +40,16 @@ const App = () => {
   // );
 
 
-  const [theme,setTheme]=useState(true);
+  const [theme, setTheme] = useState(true);
   return (
-    <div data-theme={theme?"light":"dark"}>
-      <Navbar setTheme={setTheme} theme={theme}/>
+    <div data-theme={theme ? "light" : "dark"}>
+      <Navbar setTheme={setTheme} theme={theme} />
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/login/registration' element={<LogReg/>}/>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/login/registration' element={<LogReg />} />
       </Routes>
-      <Footer/>
+      <Footer />
+
     </div>
   )
 };
